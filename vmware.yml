@@ -1,0 +1,27 @@
+---
+plugin: vmware_vm_inventory
+strict: False
+validate_certs: False
+hostnames:
+- 'config.name+"."+guest.ipStack.0.dnsConfig.domainName'
+- 'config.name'
+properties:
+- 'config.name'
+- 'config.guestFullName'
+- 'config.guestId'
+- 'guest.hostName'
+- 'guest.ipAddress'
+- 'guest.guestFamily'
+- 'guest.ipStack'
+- 'summary.runtime.powerState'
+with_tags: True
+keyed_groups:
+- key: tag_category.app_name
+  prefix: "vmware_tag_app_name_"
+  separator: ""
+- key: tag_category.role
+  prefix: "vmware_tag_role_"
+  separator: ""
+filters:
+- summary.runtime.powerState == "poweredOn"
+with_nested_properties: True
