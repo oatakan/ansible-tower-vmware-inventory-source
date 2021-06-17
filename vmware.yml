@@ -16,6 +16,9 @@ properties:
 - 'summary.runtime.powerState'
 with_tags: True
 keyed_groups:
+- key: tag_category.environment
+  prefix: "vmware_tag_environment_"
+  separator: ""
 - key: tag_category.app_name
   prefix: "vmware_tag_app_name_"
   separator: ""
