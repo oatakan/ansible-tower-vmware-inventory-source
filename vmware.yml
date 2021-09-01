@@ -9,6 +9,7 @@ properties:
 - 'config.name'
 - 'config.guestFullName'
 - 'config.guestId'
+- 'config.uuid'
 - 'guest.hostName'
 - 'guest.ipAddress'
 - 'guest.guestFamily'
